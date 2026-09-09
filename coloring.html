@@ -5,20 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE ANOMOLY ARCHIVE // Coloring Sanctuary</title>
   
+  <!-- Typography Standard -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
+    /* AO ALIVE Living Design Standard Palette Tokens */
     :root {
-      --bg-void: #04040a;
-      --ao-cyan: #00eaff;
-      --ao-magenta: #ff00c8;
-      --ao-gold: #d8ae55;
-      --surface-panel: #141423;
+      --bg-void: #04040a;         /* Void ground color */
+      --ao-cyan: #00eaff;         /* Active status / Primary accent */
+      --ao-magenta: #ff00c8;      /* Energy signature / Secondary accent */
+      --ao-gold: #d8ae55;         /* Card border & prestige rules */
+      --surface-panel: #141423;   /* Glass surface panel */
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       background-color: var(--bg-void);
@@ -28,252 +34,14 @@
       overflow-x: hidden;
     }
 
+    /* GLASS NAVIGATION HUD (18px Blur) */
     .nav-hud {
       position: fixed;
       top: 1rem;
       left: 50%;
       transform: translateX(-50%);
-      width: 90%;
-      max-width: 1100px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 20px;
-      padding: 0.8rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 0 24px rgba(255, 0, 200, 0.2);
-    }
-
-    .brand-title {
-      font-family: 'Space Mono', monospace;
-      font-size: 1.1rem;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .hud-links { display: flex; gap: 1.2rem; }
-
-    .hud-link {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      color: var(--ao-cyan);
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-    }
-
-    .hud-link:hover {
-      color: var(--ao-magenta);
-      text-shadow: 0 0 10px var(--ao-magenta);
-    }
-
-    .container {
-      padding-top: 8.5rem;
-      padding-bottom: 5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      width: 90%;
-    }
-
-    .world-tag {
-      font-family: 'JetBrains Mono', monospace;
-      letter-spacing: 0.3em;
-      color: var(--ao-magenta);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    h1.world-title {
-      font-family: 'Space Mono', monospace;
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
-
-    p.world-desc {
-      font-family: 'Inter', sans-serif;
-      color: #cccccc;
-      line-height: 1.6;
-      font-size: 1.05rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: var(--surface-panel);
-      border: 1px solid var(--ao-gold);
-      border-radius: 20px;
-      padding: 2rem;
-      animation: breathe 3.9s ease-in-out infinite;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      border-color: var(--ao-magenta);
-      box-shadow: 0 0 20px rgba(255, 0, 200, 0.35);
-    }
-
-    @keyframes breathe {
-      0%, 100% { transform: scale(1); }
-      50%      { transform: scale(1.02); }
-    }
-
-    .card-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      color: var(--ao-gold);
-      margin-bottom: 0.8rem;
-      text-transform: uppercase;
-    }
-
-    .card-title {
-      font-family: 'Space Mono', monospace;
-      font-size: 1.3rem;
-      color: #ffffff;
-      margin-bottom: 0.8rem;
-    }
-
-    .card-text {
-      font-family: 'Inter', sans-serif;
-      color: #cccccc;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 1.5rem;
-    }
-
-    .action-btn {
-      display: inline-block;
-      padding: 0.6rem 1.4rem;
-      border: 1px solid var(--ao-magenta);
-      color: var(--ao-magenta);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      text-decoration: none;
-      letter-spacing: 0.15em;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-    }
-
-    .action-btn:hover {
-      background: var(--ao-magenta);
-      color: #ffffff;
-      box-shadow: 0 0 15px var(--ao-magenta);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; }
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="nav-hud">
-    <a href="https://anomartsy.xyz" class="brand-title">THE ANOMOLY ARCHIVE</a>
-    <div class="hud-links">
-      <a href="https://anomartsy.xyz" class="hud-link">HOMEWORLD</a>
-      <a href="index.html" class="hud-link">ARCHIVE SHOP</a>
-      <a href="coloring.html" class="hud-link" style="color: var(--ao-magenta);">COLORING PACKS</a>
-      <a href="patches.html" class="hud-link">MOOD PATCHES</a>
-    </div>
-  </nav>
-
-  <div class="container">
-    <div class="world-tag">PRINTABLE SANCTUARY // TRAVEL MOUNTS</div>
-    <h1 class="world-title">COLORING SANCTUARY & RIDABLE PACKS</h1>
-    <p class="world-desc">
-      Coloring is the physical gateway to digital world-building. Print out high-resolution line art of the five celestial travel animal mounts, color them by hand, and submit them through the moderated Guardian Queue to earn Glow Points for your Sanctuary wallet.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <div class="card-tag">PACK 01 // FLIGHT & SPEED</div>
-        <h2 class="card-title">Cyber-Dragon & Rainbow Unicorn</h2>
-        <p class="card-text">
-          Features high-tensile cybernetic scales, circuit-web wing traces, and Emote Crown halos ready for custom coloring.
-        </p>
-        <a href="#" class="action-btn">DOWNLOAD SHEET ➔</a>
-      </div>
-
-      <div class="card">
-        <div class="card-tag">PACK 02 // SCOUT & TANK</div>
-        <h2 class="card-title">Armored Light & Dark Pegasus</h2>
-        <p class="card-text">
-          Armored celestial steeds carrying Scout and Tank class heraldry, designed for aerial portal traversal.
-        </p>
-        <a href="#" class="action-btn">DOWNLOAD SHEET ➔</a>
-      </div>
-
-      <div class="card">
-        <div class="card-tag">PACK 03 // SECURITY DUO</div>
-        <h2 class="card-title">Tater & Clifford Guardian Pack</h2>
-        <p class="card-text">
-          Line art featuring Tater in his K9 Security vest and Clifford in his Logistics Director BOSS chain.
-        </p>
-        <a href="#" class="action-btn">DOWNLOAD SHEET ➔</a>
-      </div>
-    </div>
-  </div>
-
-</body>
-</html>
-
-2. patches.html — The Mood Patch Vault
-This page catalogs the 41+ digital Mood Patch emblems and non-verbal emote overlays used for emotional signaling across community lounges and profile customization.
-How to Add on GitHub.com:
-
-    In your anomarsty-archive repo, click Add file ➔ Create new file.
-    Name the file: patches.html
-    Paste the code below and click Commit changes...
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THE ANOMOLY ARCHIVE // Mood Patch Vault</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg-void: #04040a;
-      --ao-cyan: #00eaff;
-      --ao-magenta: #ff00c8;
-      --ao-gold: #d8ae55;
-      --surface-panel: #141423;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background-color: var(--bg-void);
-      color: #ffffff;
-      font-family: 'Inter', sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .nav-hud {
-      position: fixed;
-      top: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 1100px;
+      width: 92%;
+      max-width: 1200px;
       background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -285,22 +53,29 @@ How to Add on GitHub.com:
       align-items: center;
       z-index: 1000;
       box-shadow: 0 0 24px rgba(0, 234, 255, 0.15);
+      flex-wrap: wrap;
+      gap: 0.8rem;
     }
 
     .brand-title {
       font-family: 'Space Mono', monospace;
       font-size: 1.1rem;
+      letter-spacing: 0.1em;
       color: #ffffff;
       text-decoration: none;
       font-weight: 700;
     }
 
-    .hud-links { display: flex; gap: 1.2rem; }
+    .hud-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
     .hud-link {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
       color: var(--ao-cyan);
       text-decoration: none;
       text-transform: uppercase;
@@ -312,15 +87,16 @@ How to Add on GitHub.com:
       text-shadow: 0 0 10px var(--ao-magenta);
     }
 
+    /* MAIN CONTAINER */
     .container {
-      padding-top: 8.5rem;
+      padding-top: 9.5rem;
       padding-bottom: 5rem;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       width: 90%;
     }
 
-    .world-tag {
+    .store-tag {
       font-family: 'JetBrains Mono', monospace;
       letter-spacing: 0.3em;
       color: var(--ao-cyan);
@@ -329,13 +105,14 @@ How to Add on GitHub.com:
       margin-bottom: 0.5rem;
     }
 
-    h1.world-title {
+    h1.store-title {
       font-family: 'Space Mono', monospace;
       font-size: 2.2rem;
       margin-bottom: 1rem;
+      color: #ffffff;
     }
 
-    p.world-desc {
+    p.store-desc {
       font-family: 'Inter', sans-serif;
       color: #cccccc;
       line-height: 1.6;
@@ -343,9 +120,57 @@ How to Add on GitHub.com:
       margin-bottom: 2.5rem;
     }
 
+    /* COLORING LOOP EXPLANATION BANNER */
+    .loop-card {
+      background: var(--surface-panel);
+      border: 1px solid var(--ao-gold);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 0 20px rgba(0, 234, 255, 0.15);
+    }
+
+    .loop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .loop-step {
+      background: rgba(4, 4, 10, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .step-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.5rem;
+      color: var(--ao-cyan);
+      margin-bottom: 0.4rem;
+    }
+
+    .step-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--ao-gold);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .step-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: #cccccc;
+      line-height: 1.4;
+    }
+
+    /* HOUSE 1 CARD GRID (Staggered Breathing 3.2s) */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
@@ -353,14 +178,18 @@ How to Add on GitHub.com:
       background: var(--surface-panel);
       border: 1px solid var(--ao-gold);
       border-radius: 20px;
-      padding: 2rem;
-      animation: breathe 3.9s ease-in-out infinite;
+      padding: 1.8rem;
+      animation: breathe 3.2s ease-in-out infinite; /* House 1 timing */
       transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .card:hover {
       border-color: var(--ao-cyan);
-      box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+      box-shadow: 0 0 22px rgba(0, 234, 255, 0.35);
+      transform: translateY(-4px);
     }
 
     @keyframes breathe {
@@ -368,33 +197,45 @@ How to Add on GitHub.com:
       50%      { transform: scale(1.02); }
     }
 
+    .card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      background: #ffffff; /* White background to emulate printable sheet */
+      border: 1px solid rgba(216, 174, 85, 0.3);
+      padding: 0.8rem;
+    }
+
     .card-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
       letter-spacing: 0.2em;
       color: var(--ao-gold);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
       text-transform: uppercase;
     }
 
     .card-title {
       font-family: 'Space Mono', monospace;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       color: #ffffff;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
     }
 
     .card-text {
       font-family: 'Inter', sans-serif;
       color: #cccccc;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       line-height: 1.5;
       margin-bottom: 1.5rem;
     }
 
     .action-btn {
       display: inline-block;
-      padding: 0.6rem 1.4rem;
+      text-align: center;
+      padding: 0.7rem 1.4rem;
       border: 1px solid var(--ao-cyan);
       color: var(--ao-cyan);
       font-family: 'JetBrains Mono', monospace;
@@ -418,53 +259,119 @@ How to Add on GitHub.com:
 </head>
 <body>
 
+  <!-- CROSS-DOMAIN NAVIGATION HUD -->
   <nav class="nav-hud">
     <a href="https://anomartsy.xyz" class="brand-title">THE ANOMOLY ARCHIVE</a>
     <div class="hud-links">
       <a href="https://anomartsy.xyz" class="hud-link">HOMEWORLD</a>
-      <a href="index.html" class="hud-link">ARCHIVE SHOP</a>
-      <a href="coloring.html" class="hud-link">COLORING PACKS</a>
-      <a href="patches.html" class="hud-link" style="color: var(--ao-cyan);">MOOD PATCHES</a>
+      <a href="https://anomartsy.xyz/kids.html" class="hud-link">ANOM'S CORNER</a>
+      <a href="index.html" class="hud-link">SHOP & MOUNTS</a>
+      <a href="coloring.html" class="hud-link" style="color: var(--ao-cyan);">COLORING SANCTUARY</a>
+      <a href="https://anomartsy.xyz/sanctuary.html" class="hud-link">SANCTUARY</a>
     </div>
   </nav>
 
+  <!-- COLORING SANCTUARY CONTENT -->
   <div class="container">
-    <div class="world-tag">EMOTE SYSTEM // NON-VERBAL SIGNALING</div>
-    <h1 class="world-title">MOOD PATCH & EMOTE EMBLEM VAULT</h1>
-    <p class="world-desc">
-      In the AO Universe, we speak in emotes and glow. Mood Patches serve as non-verbal emotional cues, allowing travelers of all ages to signal their internal state without words across community lounges and profile overlays.
+    <div class="store-tag">ANOM'S CORNER // CREATIVE PRINTABLES</div>
+    <h1 class="store-title">ANOM'S COLORING SANCTUARY — PAINT YOUR RIDABLES!</h1>
+    <p class="store-desc">
+      Print physical coloring sheets of your favorite aerial travel animals, color them at home with your family, and upload completed sheets to earn Glow Points in your Sanctuary vault!
     </p>
 
+    <!-- THE COLORING LOOP -->
+    <section class="loop-card">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--ao-gold); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.5rem;">
+        HOW THE CREATIVE LOOP WORKS
+      </div>
+      <h2 style="font-family: 'Space Mono', monospace; font-size: 1.4rem; color: #ffffff; margin-bottom: 0.8rem;">
+        FROM PAPER TO THE CELESTIAL SKY
+      </h2>
+      <p style="font-family: 'Inter', sans-serif; color: #cccccc; font-size: 0.95rem; line-height: 1.5; max-width: 800px;">
+        In the AO Universe, "moving through the worlds is doing good." For younger travelers who cannot yet build digitally, offline coloring translates directly into in-game presence and travel propulsion.
+      </p>
+
+      <div class="loop-grid">
+        <div class="loop-step">
+          <div class="step-num">01</div>
+          <div class="step-title">Download & Print</div>
+          <div class="step-desc">Pick any aerial companion printable below and print it at home.</div>
+        </div>
+        <div class="loop-step">
+          <div class="step-num">02</div>
+          <div class="step-title">Color Offline</div>
+          <div class="step-desc">Use crayons, markers, or paints to give your travel animal its unique glow.</div>
+        </div>
+        <div class="loop-step">
+          <div class="step-num">03</div>
+          <div class="step-title">Guardian Intake</div>
+          <div class="step-desc">Upload a photo to the Guardian Queue for privacy verification.</div>
+        </div>
+        <div class="loop-step">
+          <div class="step-num">04</div>
+          <div class="step-title">Earn Glow Points</div>
+          <div class="step-desc">Receive Glow Points (+5 GP) in your Sanctuary vault to fuel portal flights!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINTABLE COLORING SHEETS GRID -->
     <div class="grid">
-      <div class="card">
-        <div class="card-tag">VOL. 01 // FOCUS & CURIOSITY</div>
-        <h2 class="card-title">Spiral Focus & Puzzled Glyphs</h2>
-        <p class="card-text">
-          Digital emblems representing quiet observation, curiosity, and deep focus during adjustment periods.
-        </p>
-        <a href="#" class="action-btn">GET EMBLEM SET ➔</a>
-      </div>
 
-      <div class="card">
-        <div class="card-tag">VOL. 02 // CARE & UPSTANDER</div>
-        <h2 class="card-title">Heart Sparkle & Upstander Badges</h2>
-        <p class="card-text">
-          Luminescent Hot Magenta and Electric Cyan emblems earned through community care and peer appreciation.
-        </p>
-        <a href="#" class="action-btn">GET EMBLEM SET ➔</a>
-      </div>
+      <!-- SHEET 1: CYBER-DRAGON -->
+      <article class="card">
+        <div>
+          <img src="assets/mounts/ridable_cyber_dragon_cutout.png" alt="Cyber-Dragon Coloring Sheet" class="card-img">
+          <div class="card-tag">PRINTABLE SHEET 01 // EMOTE MOUNT</div>
+          <h2 class="card-title">Cyber-Dragon Mount</h2>
+          <p class="card-text">
+            Line art for the armor-plated cyber-dragon with mechanical wing conduits, Emote Crown, and circuit scales.
+          </p>
+        </div>
+        <a href="assets/mounts/ridable_cyber_dragon_cutout.png" class="action-btn" download>DOWNLOAD SHEET ➔</a>
+      </article>
 
-      <div class="card">
-        <div class="card-tag">VOL. 03 // MOOD BUDDIES</div>
-        <h2 class="card-title">Headphones Duo & Vibe-Check Emblems</h2>
-        <p class="card-text">
-          Co-op signaling patches featuring the iconic blue and pink headphones duo for casual lounge interactions.
-        </p>
-        <a href="#" class="action-btn">GET EMBLEM SET ➔</a>
-      </div>
+      <!-- SHEET 2: RAINBOW UNICORN / PEGASUS -->
+      <article class="card">
+        <div>
+          <img src="assets/mounts/ridable_rainbow_unicorn_v2.png" alt="Rainbow Pegasus Coloring Sheet" class="card-img">
+          <div class="card-tag">PRINTABLE SHEET 02 // ANOM'S CORNER</div>
+          <h2 class="card-title">Rainbow Pegasus Mount</h2>
+          <p class="card-text">
+            Features Pixel & Dot's favorite aerial white unicorn with sweeping feathered wings and celestial halo rings.
+          </p>
+        </div>
+        <a href="assets/mounts/ridable_rainbow_unicorn_v2.png" class="action-btn" download>DOWNLOAD SHEET ➔</a>
+      </article>
+
+      <!-- SHEET 3: GALAXY SPIRAL DRAGON -->
+      <article class="card">
+        <div>
+          <img src="assets/mounts/ridable_galaxy_spiral_cutout.png" alt="Galaxy Spiral Dragon Sheet" class="card-img">
+          <div class="card-tag">PRINTABLE SHEET 03 // CELESTIAL TIER</div>
+          <h2 class="card-title">Galaxy Spiral Dragon</h2>
+          <p class="card-text">
+            Deep-space dragon outline with translucent galaxy wing sails, spiral tail curls, and cosmic light traces.
+          </p>
+        </div>
+        <a href="assets/mounts/ridable_galaxy_spiral_cutout.png" class="action-btn" download>DOWNLOAD SHEET ➔</a>
+      </article>
+
+      <!-- SHEET 4: TATER & CLIFFORD K9 SECURITY -->
+      <article class="card">
+        <div>
+          <img src="assets/emblems/ao_collector_emblems_showcase.png" alt="Tater and Clifford Security Sheet" class="card-img">
+          <div class="card-tag">PRINTABLE SHEET 04 // K9 LEADERSHIP</div>
+          <h2 class="card-title">Tater & Clifford K9 Security</h2>
+          <p class="card-text">
+            Color the K9 Security duo—8lb Chipin Tater in his vest and 20lb orange cat Clifford wearing his BOSS chain.
+          </p>
+        </div>
+        <a href="assets/emblems/ao_collector_emblems_showcase.png" class="action-btn" download>DOWNLOAD SHEET ➔</a>
+      </article>
+
     </div>
   </div>
 
 </body>
 </html>
-
