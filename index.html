@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THE ANOMOLY ARCHIVE // Digital Storefront</title>
+  <title>THE ANOMOLY ARCHIVE // Coins & Memberships</title>
   
   <!-- Typography Standard -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +52,7 @@
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      box-shadow: 0 0 24px rgba(255, 0, 200, 0.2);
+      box-shadow: 0 0 24px rgba(216, 174, 85, 0.2);
     }
 
     .brand-title {
@@ -73,15 +73,15 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.8rem;
       letter-spacing: 0.2em;
-      color: var(--ao-cyan);
+      color: var(--ao-gold);
       text-decoration: none;
       text-transform: uppercase;
       transition: all 0.3s ease;
     }
 
     .hud-link:hover {
-      color: var(--ao-magenta);
-      text-shadow: 0 0 10px var(--ao-magenta);
+      color: var(--ao-cyan);
+      text-shadow: 0 0 10px var(--ao-cyan);
     }
 
     /* MAIN STORE CONTAINER */
@@ -96,7 +96,7 @@
     .store-tag {
       font-family: 'JetBrains Mono', monospace;
       letter-spacing: 0.3em;
-      color: var(--ao-magenta);
+      color: var(--ao-gold);
       font-size: 0.8rem;
       text-transform: uppercase;
       margin-bottom: 0.5rem;
@@ -117,11 +117,21 @@
       margin-bottom: 2.5rem;
     }
 
-    /* PRODUCT GRID (Staggered Breathing 3.9s) */
+    .section-heading {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.4rem;
+      color: var(--ao-cyan);
+      margin: 2rem 0 1rem 0;
+      border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+      padding-bottom: 0.5rem;
+    }
+
+    /* PRODUCT GRID (Staggered Breathing 4.1s) */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
+      margin-bottom: 3rem;
     }
 
     .card {
@@ -129,13 +139,16 @@
       border: 1px solid var(--ao-gold);
       border-radius: 20px;
       padding: 2rem;
-      animation: breathe 3.9s ease-in-out infinite;
+      animation: breathe 4.1s ease-in-out infinite;
       transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .card:hover {
-      border-color: var(--ao-magenta);
-      box-shadow: 0 0 20px rgba(255, 0, 200, 0.35);
+      border-color: var(--ao-cyan);
+      box-shadow: 0 0 20px rgba(0, 234, 255, 0.35);
     }
 
     @keyframes breathe {
@@ -156,7 +169,15 @@
       font-family: 'Space Mono', monospace;
       font-size: 1.3rem;
       color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+
+    .price-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.2rem;
+      color: var(--ao-cyan);
       margin-bottom: 0.8rem;
+      font-weight: 700;
     }
 
     .card-text {
@@ -169,9 +190,10 @@
 
     .action-btn {
       display: inline-block;
-      padding: 0.6rem 1.4rem;
-      border: 1px solid var(--ao-magenta);
-      color: var(--ao-magenta);
+      text-align: center;
+      padding: 0.7rem 1.4rem;
+      border: 1px solid var(--ao-gold);
+      color: var(--ao-gold);
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.8rem;
       text-decoration: none;
@@ -181,9 +203,9 @@
     }
 
     .action-btn:hover {
-      background: var(--ao-magenta);
-      color: #ffffff;
-      box-shadow: 0 0 15px var(--ao-magenta);
+      background: var(--ao-gold);
+      color: var(--bg-void);
+      box-shadow: 0 0 15px var(--ao-gold);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -198,50 +220,101 @@
     <a href="https://anomartsy.xyz" class="brand-title">THE ANOMOLY ARCHIVE</a>
     <div class="hud-links">
       <a href="https://anomartsy.xyz" class="hud-link">HOMEWORLD</a>
-      <a href="index.html" class="hud-link" style="color: var(--ao-magenta);">ARCHIVE SHOP</a>
+      <a href="index.html" class="hud-link" style="color: var(--ao-cyan);">COINS & MEMBERSHIPS</a>
     </div>
   </nav>
 
   <!-- STOREFRONT CONTENT -->
   <div class="container">
-    <div class="world-tag">OFFICIAL STOREFRONT // DIGITAL ASSET ARCHIVE</div>
-    <h1 class="store-title">WORLD-BUILDING SUPPLIES & PRINTABLES</h1>
+    <div class="store-tag">SANCTUARY GATEWAY // OFFICIAL SHOP</div>
+    <h1 class="store-title">ANOM COIN PACKS & SANCTUARY MEMBERSHIPS</h1>
     <p class="store-desc">
-      Acquire physical and digital supplies to build your world. From printable travel animal coloring packs to Mood Patch collections, every item carries the signature energy of the AO Universe.
+      Acquire Anom Coins to unlock rare travel animal mounts or join a Sanctuary Membership tier to unlock age-level privileges and Guardian Queue verification across the celestial town.
     </p>
 
+    <!-- SECTION 1: ANOM COIN PACKS -->
+    <h2 class="section-heading">🪙 ANOM COIN PACKS</h2>
     <div class="grid">
-      <!-- ITEM 1: COLORING SANCTUARY -->
+      <!-- COIN PACK 100 -->
       <div class="card">
-        <div class="card-tag">PRINTABLE PACK // RIDABLE MOUNTS</div>
-        <h2 class="card-title">Coloring Sanctuary Pack</h2>
-        <p class="card-text">
-          Printable high-resolution line art featuring the Cyber-Dragon, Rainbow Unicorn, White Unicorn, and Armored Pegasus travel mounts [4, 5]. Color and submit to earn Glow Points [5]!
-        </p>
-
-        <a href="#" class="action-btn">DOWNLOAD PACK ➔</a>
+        <div>
+          <div class="card-tag">SANCTUARY WALLET // STARTER</div>
+          <h3 class="card-title">100 Anom Coins</h3>
+          <div class="price-tag">$10.00 USD</div>
+          <p class="card-text">
+            Adds 100 AC directly to your Sanctuary wallet. Ideal for unlocking starter travel animal mounts and custom world textures.
+          </p>
+        </div>
+        <a href="#" class="action-btn">PURCHASE PACK ➔</a>
       </div>
 
-      <!-- ITEM 2: MOOD PATCH COLLECTION -->
+      <!-- COIN PACK 500 -->
       <div class="card">
-        <div class="card-tag">EMOTE SYSTEM // DIGITAL PATCHES</div>
-        <h2 class="card-title">Mood Patch Set Vol. 1</h2>
-        <p class="card-text">
-          Digital emote emblems and non-verbal signaling patches designed for profile overlays, community lounges, and creative world builds [6, 7].
-        </p>
-
-        <a href="#" class="action-btn">GET MOOD PATCHES ➔</a>
+        <div>
+          <div class="card-tag">SANCTUARY WALLET // BUILDER</div>
+          <h3 class="card-title">500 Anom Coins</h3>
+          <div class="price-tag">$50.00 USD</div>
+          <p class="card-text">
+            Adds 500 AC to your Sanctuary wallet. Unlocks rare Cyber-Dragon or Pegasus mounts and advanced world-building supplies.
+          </p>
+        </div>
+        <a href="#" class="action-btn">PURCHASE PACK ➔</a>
       </div>
 
-      <!-- ITEM 3: WORLD-BUILDING TEXTURES -->
+      <!-- COIN PACK 1000 -->
       <div class="card">
-        <div class="card-tag">CREATIVE SUPPLY // SANCTUARY TEXTURES</div>
-        <h2 class="card-title">Celestial Texture & Sky Kit</h2>
-        <p class="card-text">
-          Full-bleed dark void wallpapers, glowing circuit-web overlays [8], and neon starfield environments for custom world creation [6, 9].
-        </p>
+        <div>
+          <div class="card-tag">SANCTUARY WALLET // CELESTIAL</div>
+          <h3 class="card-title">1,000 Anom Coins</h3>
+          <div class="price-tag">$100.00 USD</div>
+          <p class="card-text">
+            The ultimate world-builder deposit. Includes 1,000 AC plus priority Guardian Queue processing for custom coloring entries.
+          </p>
+        </div>
+        <a href="#" class="action-btn">PURCHASE PACK ➔</a>
+      </div>
+    </div>
 
-        <a href="#" class="action-btn">EXPLORE KIT ➔</a>
+    <!-- SECTION 2: SANCTUARY MEMBERSHIPS -->
+    <h2 class="section-heading">✨ SANCTUARY MEMBERSHIPS</h2>
+    <div class="grid">
+      <!-- MEMBERSHIP 1: FAMILY PASS -->
+      <div class="card">
+        <div>
+          <div class="card-tag">TIER 01 // SPROUTS & EXPLORERS</div>
+          <h3 class="card-title">Family Sanctuary Pass</h3>
+          <div class="price-tag">$5.00 / mo</div>
+          <p class="card-text">
+            Full parent/child Sanctuary pass for ages 5–12. Includes moderated Guardian Queue access, coloring pack downloads, and Kids Corner access.
+          </p>
+        </div>
+        <a href="#" class="action-btn">SUBSCRIBE NOW ➔</a>
+      </div>
+
+      <!-- MEMBERSHIP 2: ARCHITECT PASS -->
+      <div class="card">
+        <div>
+          <div class="card-tag">TIER 02 // BUILDERS & ARCHITECTS</div>
+          <h3 class="card-title">Architect Builder Pass</h3>
+          <div class="price-tag">$12.00 / mo</div>
+          <p class="card-text">
+            For creators aged 13+. Grants access to public gallery submissions, S.T.O.P. chat verification, and 50 bonus AC monthly.
+          </p>
+        </div>
+        <a href="#" class="action-btn">SUBSCRIBE NOW ➔</a>
+      </div>
+
+      <!-- MEMBERSHIP 3: GUARDIAN GUILD -->
+      <div class="card">
+        <div>
+          <div class="card-tag">TIER 03 // GUARDIANS & STEWARDS</div>
+          <h3 class="card-title">Guardian Guild Pass</h3>
+          <div class="price-tag">$25.00 / mo</div>
+          <p class="card-text">
+            For community stewards aged 18+. Includes full governance tools, ambassador lounge access, and monthly coin grants.
+          </p>
+        </div>
+        <a href="#" class="action-btn">JOIN GUILD ➔</a>
       </div>
     </div>
   </div>
