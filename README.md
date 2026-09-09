@@ -1,22 +1,22 @@
 # 🛍️ THE ANOMOLY ARCHIVE (`anomarsty.lol`)
 
-> *"Building supplies for personal universes — printables, Mood Patches, and ridable coloring packs."*
+> *"Direct Sanctuary wallet deposits — Anom Coin packs and family membership tiers."*
 
 ---
 
 ## 🚀 Overview
 
-**`anomarsty-archive`** powers [anomarsty.lol](https://anomarsty.lol) — the official digital store and asset archive of **Anom Originals**. It provides creative materials, printable coloring sheets, digital patches, and world-building supplies for members of the **AO Universe**.
+**`anomarsty-archive`** powers [anomarsty.lol](https://anomarsty.lol) — the official store for **Anom Originals**. It handles direct purchases of **Anom Coins (AC)** (10 AC = $1 USD) and monthly **Sanctuary Memberships** for family and creator tiers across the **AO Universe**.
 
 ---
 
 ## 🎨 Visual Identity & Palette Tokens
 
 In accordance with the **AO ALIVE Living Design Standard**:
-* **Primary Accent:** Hot Magenta (`#ff00c8`)
-* **Card Borders:** Gold (`#d8ae55`)
+* **Primary Accent:** Hot Gold (`#d8ae55`) & Electric Cyan (`#00eaff`)
 * **Background Ground:** Void (`#04040a`)
-* **Motion:** House 3 Staggered Breathing Loop (`3.9s`)
+* **Surface Panel:** Glassmorphic (`#141423`)
+* **Motion:** House 4 Staggered Breathing Loop (`4.1s`)
 
 ---
 
