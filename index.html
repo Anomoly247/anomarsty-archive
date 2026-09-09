@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THE ANOMOLY ARCHIVE // Coins & Memberships</title>
+  <title>THE ANOMOLY ARCHIVE // Coins, Mounts & Memberships</title>
   
   <!-- Typography Standard -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     :root {
       --bg-void: #04040a;         /* Void ground color */
       --ao-cyan: #00eaff;         /* Active status / Primary accent */
-      --ao-magenta: #ff00c8;      /* Energy signature / Store primary accent */
+      --ao-magenta: #ff00c8;      /* Energy signature / Secondary accent */
       --ao-gold: #d8ae55;         /* Card border & prestige rules */
       --surface-panel: #141423;   /* Glass surface panel */
     }
@@ -40,8 +40,8 @@
       top: 1rem;
       left: 50%;
       transform: translateX(-50%);
-      width: 90%;
-      max-width: 1100px;
+      width: 92%;
+      max-width: 1200px;
       background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -53,6 +53,8 @@
       align-items: center;
       z-index: 1000;
       box-shadow: 0 0 24px rgba(216, 174, 85, 0.2);
+      flex-wrap: wrap;
+      gap: 0.8rem;
     }
 
     .brand-title {
@@ -66,13 +68,14 @@
 
     .hud-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .hud-link {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
       color: var(--ao-gold);
       text-decoration: none;
       text-transform: uppercase;
@@ -86,9 +89,9 @@
 
     /* MAIN STORE CONTAINER */
     .container {
-      padding-top: 8.5rem;
+      padding-top: 9.5rem;
       padding-bottom: 5rem;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       width: 90%;
     }
@@ -121,25 +124,25 @@
       font-family: 'Space Mono', monospace;
       font-size: 1.4rem;
       color: var(--ao-cyan);
-      margin: 2rem 0 1rem 0;
+      margin: 3rem 0 1.5rem 0;
       border-bottom: 1px solid rgba(0, 234, 255, 0.2);
       padding-bottom: 0.5rem;
     }
 
-    /* PRODUCT GRID (Staggered Breathing 4.1s) */
+    /* HOUSE 4 CARD GRID (Staggered Breathing 4.1s) */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
     .card {
       background: var(--surface-panel);
       border: 1px solid var(--ao-gold);
       border-radius: 20px;
-      padding: 2rem;
-      animation: breathe 4.1s ease-in-out infinite;
+      padding: 1.8rem;
+      animation: breathe 4.1s ease-in-out infinite; /* House 4 timing */
       transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
@@ -148,7 +151,8 @@
 
     .card:hover {
       border-color: var(--ao-cyan);
-      box-shadow: 0 0 20px rgba(0, 234, 255, 0.35);
+      box-shadow: 0 0 22px rgba(0, 234, 255, 0.35);
+      transform: translateY(-4px);
     }
 
     @keyframes breathe {
@@ -156,18 +160,29 @@
       50%      { transform: scale(1.02); }
     }
 
+    .card-img {
+      width: 100%;
+      height: 210px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      background: rgba(4, 4, 10, 0.6);
+      border: 1px solid rgba(216, 174, 85, 0.2);
+      padding: 0.5rem;
+    }
+
     .card-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
       letter-spacing: 0.2em;
       color: var(--ao-gold);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
       text-transform: uppercase;
     }
 
     .card-title {
       font-family: 'Space Mono', monospace;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       color: #ffffff;
       margin-bottom: 0.4rem;
     }
@@ -183,7 +198,7 @@
     .card-text {
       font-family: 'Inter', sans-serif;
       color: #cccccc;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       line-height: 1.5;
       margin-bottom: 1.5rem;
     }
@@ -220,79 +235,129 @@
     <a href="https://anomartsy.xyz" class="brand-title">THE ANOMOLY ARCHIVE</a>
     <div class="hud-links">
       <a href="https://anomartsy.xyz" class="hud-link">HOMEWORLD</a>
-      <a href="index.html" class="hud-link" style="color: var(--ao-cyan);">COINS & MEMBERSHIPS</a>
+      <a href="https://anomartsy.xyz/sanctuary.html" class="hud-link">SANCTUARY</a>
+      <a href="index.html" class="hud-link" style="color: var(--ao-cyan);">SHOP & MOUNTS</a>
     </div>
   </nav>
 
   <!-- STOREFRONT CONTENT -->
   <div class="container">
-    <div class="store-tag">SANCTUARY GATEWAY // OFFICIAL SHOP</div>
-    <h1 class="store-title">ANOM COIN PACKS & SANCTUARY MEMBERSHIPS</h1>
+    <div class="store-tag">SANCTUARY GATEWAY // ANOMOLY ARCHIVE SHOP</div>
+    <h1 class="store-title">ANOM COINS, RARE MOUNTS & MEMBERSHIPS</h1>
     <p class="store-desc">
-      Acquire Anom Coins to unlock rare travel animal mounts or join a Sanctuary Membership tier to unlock age-level privileges and Guardian Queue verification across the celestial town.
+      Acquire Anom Coins (10 AC = $1 USD) to fuel aerial travel animals, unlock rare mount tiers, or join a Sanctuary Membership tier to earn Guardian Queue privileges across the celestial town.
     </p>
 
-    <!-- SECTION 1: ANOM COIN PACKS -->
-    <h2 class="section-heading">🪙 ANOM COIN PACKS</h2>
+    <!-- SECTION 1: RARE TRAVEL ANIMAL MOUNTS -->
+    <h2 class="section-heading">🐉 RARE TRAVEL ANIMAL MOUNT UNLOCKS</h2>
+    <div class="grid">
+
+      <!-- MOUNT 1: CYBER-DRAGON -->
+      <article class="card">
+        <div>
+          <img src="assets/mounts/ridable_cyber_dragon_cutout.png" alt="Cyber-Dragon Emote Mount" class="card-img" onerror="this.src='assets/emblems/cyber_dragon_badge_cyan.png';">
+          <div class="card-tag">RARE MOUNT // EMOTE TIER</div>
+          <h3 class="card-title">Cyber-Dragon Mount</h3>
+          <div class="price-tag">500 Anom Coins ($50)</div>
+          <p class="card-text">
+            Features armor-plated mechanical scales, luminescent circuit wings, and a floating Emote Crown for real-time emotional expression.
+          </p>
+        </div>
+        <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_500_AC" class="action-btn">UNLOCK MOUNT ➔</a>
+      </article>
+
+      <!-- MOUNT 2: RAINBOW UNICORN / PEGASUS -->
+      <article class="card">
+        <div>
+          <img src="assets/mounts/ridable_rainbow_unicorn_v2.png" alt="Rainbow Pegasus Mount" class="card-img" onerror="this.src='assets/emblems/rainbow_pegasus_badge.png';">
+          <div class="card-tag">RARE MOUNT // CELESTIAL TIER</div>
+          <h3 class="card-title">Rainbow Pegasus Mount</h3>
+          <div class="price-tag">300 Anom Coins ($30)</div>
+          <p class="card-text">
+            Pure white aerial mount featuring radiant iridescent rainbow wings, golden halo rings, and speed flight propulsion.
+          </p>
+        </div>
+        <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_100_AC" class="action-btn">UNLOCK MOUNT ➔</a>
+      </article>
+
+      <!-- MOUNT 3: GALAXY SPIRAL DRAGON -->
+      <article class="card">
+        <div>
+          <img src="assets/mounts/ridable_galaxy_spiral_cutout.png" alt="Galaxy Spiral Dragon" class="card-img" onerror="this.src='assets/emblems/cyber_dragon_badge_magenta.png';">
+          <div class="card-tag">RARE MOUNT // COLLECTOR TIER</div>
+          <h3 class="card-title">Galaxy Spiral Dragon</h3>
+          <div class="price-tag">1,000 Anom Coins ($100)</div>
+          <p class="card-text">
+            Deep space indigo dragon with translucent wing sails displaying swirling cosmic galaxy nebulae and cyan light traces.
+          </p>
+
+        </div>
+        <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_1000_AC" class="action-btn">UNLOCK MOUNT ➔</a>
+      </article>
+
+    </div>
+
+    <!-- SECTION 2: ANOM COIN PACKS -->
+    <h2 class="section-heading">🪙 ANOM COIN WALLET PACKS</h2>
     <div class="grid">
       <!-- COIN PACK 100 -->
-      <div class="card">
+      <article class="card">
         <div>
           <div class="card-tag">SANCTUARY WALLET // STARTER</div>
           <h3 class="card-title">100 Anom Coins</h3>
           <div class="price-tag">$10.00 USD</div>
           <p class="card-text">
-            Adds 100 AC directly to your Sanctuary wallet. Ideal for unlocking starter travel animal mounts and custom world textures.
+            Adds 100 AC directly to your Sanctuary wallet. Ideal for starter travel mount customization and world textures.
           </p>
         </div>
-        <a href="#" class="action-btn">PURCHASE PACK ➔</a>
-      </div>
+        <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_100_AC" class="action-btn">PURCHASE PACK ➔</a>
+      </article>
 
       <!-- COIN PACK 500 -->
-      <div class="card">
+      <article class="card">
         <div>
           <div class="card-tag">SANCTUARY WALLET // BUILDER</div>
           <h3 class="card-title">500 Anom Coins</h3>
           <div class="price-tag">$50.00 USD</div>
           <p class="card-text">
-            Adds 500 AC to your Sanctuary wallet. Unlocks rare Cyber-Dragon or Pegasus mounts and advanced world-building supplies.
+            Adds 500 AC to your Sanctuary wallet. Unlocks rare Cyber-Dragon or Pegasus mounts and world-building supplies.
           </p>
         </div>
-        <a href="#" class="action-btn">PURCHASE PACK ➔</a>
-      </div>
+        <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_500_AC" class="action-btn">PURCHASE PACK ➔</a>
+      </article>
 
       <!-- COIN PACK 1000 -->
-      <div class="card">
+      <article class="card">
         <div>
           <div class="card-tag">SANCTUARY WALLET // CELESTIAL</div>
           <h3 class="card-title">1,000 Anom Coins</h3>
           <div class="price-tag">$100.00 USD</div>
           <p class="card-text">
-            The ultimate world-builder deposit. Includes 1,000 AC plus priority Guardian Queue processing for custom coloring entries.
+            The ultimate world-builder deposit. Includes 1,000 AC plus priority Guardian Queue processing for custom entries.
           </p>
         </div>
-        <a href="#" class="action-btn">PURCHASE PACK ➔</a>
-      </div>
+        <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_1000_AC" class="action-btn">PURCHASE PACK ➔</a>
+      </article>
     </div>
 
-    <!-- SECTION 2: SANCTUARY MEMBERSHIPS -->
+    <!-- SECTION 3: SANCTUARY MEMBERSHIPS -->
     <h2 class="section-heading">✨ SANCTUARY MEMBERSHIPS</h2>
     <div class="grid">
       <!-- MEMBERSHIP 1: FAMILY PASS -->
-      <div class="card">
+      <article class="card">
         <div>
           <div class="card-tag">TIER 01 // SPROUTS & EXPLORERS</div>
           <h3 class="card-title">Family Sanctuary Pass</h3>
           <div class="price-tag">$5.00 / mo</div>
           <p class="card-text">
-            Full parent/child Sanctuary pass for ages 5–12. Includes moderated Guardian Queue access, coloring pack downloads, and Kids Corner access.
+            Full parent/child Sanctuary pass for ages 5–12. Includes moderated Guardian Queue access and printable coloring packs.
           </p>
         </div>
-        <a href="#" class="action-btn">SUBSCRIBE NOW ➔</a>
-      </div>
+        <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_FAMILY_PASS" class="action-btn">SUBSCRIBE NOW ➔</a>
+      </article>
 
       <!-- MEMBERSHIP 2: ARCHITECT PASS -->
-      <div class="card">
+      <article class="card">
         <div>
           <div class="card-tag">TIER 02 // BUILDERS & ARCHITECTS</div>
           <h3 class="card-title">Architect Builder Pass</h3>
@@ -301,11 +366,11 @@
             For creators aged 13+. Grants access to public gallery submissions, S.T.O.P. chat verification, and 50 bonus AC monthly.
           </p>
         </div>
-        <a href="#" class="action-btn">SUBSCRIBE NOW ➔</a>
-      </div>
+        <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_ARCHITECT_PASS" class="action-btn">SUBSCRIBE NOW ➔</a>
+      </article>
 
       <!-- MEMBERSHIP 3: GUARDIAN GUILD -->
-      <div class="card">
+      <article class="card">
         <div>
           <div class="card-tag">TIER 03 // GUARDIANS & STEWARDS</div>
           <h3 class="card-title">Guardian Guild Pass</h3>
@@ -314,10 +379,12 @@
             For community stewards aged 18+. Includes full governance tools, ambassador lounge access, and monthly coin grants.
           </p>
         </div>
-        <a href="#" class="action-btn">JOIN GUILD ➔</a>
-      </div>
+        <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_GUARDIAN_GUILD" class="action-btn">JOIN GUILD ➔</a>
+      </article>
     </div>
+
   </div>
 
 </body>
 </html>
+
