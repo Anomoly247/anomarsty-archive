@@ -13,7 +13,10 @@
   function banner(){
     if(document.getElementById('ao-bridge')) return;
     var d=document.createElement('div'); d.id='ao-bridge';
-    d.innerHTML='<div style="max-width:960px;margin:20px auto;background:#080A12;border:1px solid #d8ae55;border-radius:16px;padding:20px;display:flex;gap:16px;align-items:center;color:#e8e6d9;font-family:Inter,sans-serif"><div style="width:56px;height:56px;border-radius:50%;border:2px solid #d8ae55;display:grid;place-items:center">◍</div><div style="flex:1"><div style="font-size:11px;letter-spacing:.2em;color:#d8ae55">AO UNIVERSE → STORE CITY</div><div style="font-size:20px;font-weight:800;color:#fff">Welcome from '+(HOUSES[house]||house)+'</div><div style="font-size:13px;opacity:.75">House '+house+' • Mount '+(MOUNTS[mount]||'choose')+' • +50 AC bonus</div></div><div style="background:rgba(216,174,85,.12);border:1px solid #d8ae55;border-radius:999px;padding:8px 14px;color:#d8ae55;font-weight:700">HOUSE '+house+'</div></div>';
+    d.style.marginTop='96px';
+    d.style.position='relative';
+    d.style.zIndex='5';
+    d.innerHTML='<div style="max-width:960px;margin:0 auto 20px;background:#080A12;border:1px solid #d8ae55;border-radius:16px;padding:20px;display:flex;gap:16px;align-items:center;color:#e8e6d9;font-family:Inter,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.4)"><div style="width:56px;height:56px;border-radius:50%;border:2px solid #d8ae55;display:grid;place-items:center">◍</div><div style="flex:1"><div style="font-size:11px;letter-spacing:.2em;color:#d8ae55">AO UNIVERSE → STORE CITY</div><div style="font-size:20px;font-weight:800;color:#fff">Welcome from '+(HOUSES[house]||house)+'</div><div style="font-size:13px;opacity:.75">House '+house+' • Mount '+(MOUNTS[mount]||'choose')+' • +50 AC bonus</div></div><div style="background:rgba(216,174,85,.12);border:1px solid #d8ae55;border-radius:999px;padding:8px 14px;color:#d8ae55;font-weight:700">HOUSE '+house+'</div></div>';
     (document.querySelector('main')||document.body).prepend(d);
   }
   document.readyState==='loading'?document.addEventListener('DOMContentLoaded',banner):banner();
