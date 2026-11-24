@@ -48,6 +48,8 @@
   .pill{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-family:'Geist Mono',monospace;font-size:12px}
   .pill .num{font-weight:800;font-size:16px;color:var(--gold);font-family:'Geist',sans-serif}
   .pill.done-pill{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.35);color:var(--green)}
+  .pill.home-link{text-decoration:none;color:#fff;cursor:pointer;transition:all .25s}
+  .pill.home-link:hover{border-color:rgba(0,230,255,.6);color:#00e6ff}
   .coin{width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#fff3a6,#fbbf24 55%,#d97706);box-shadow:0 0 10px rgba(251,191,36,.6);display:inline-block}
   #flyZone{position:relative}
   .fly{position:absolute;right:0;top:-6px;font-weight:800;color:var(--gold);font-size:15px;animation:flyup 1.6s ease forwards;pointer-events:none;white-space:nowrap;text-shadow:0 0 12px rgba(251,191,36,.7)}
@@ -168,6 +170,7 @@
 <header>
   <div class="hud">
     <span class="logo">AO <span class="grad-text">GLOW</span></span>
+    <a class="pill home-link" href="https://anomarsty.lol/">← HOME</a>
     <span class="pill done-pill" id="lessonPill">0/3 LESSONS</span>
     <span class="spacer"></span>
     <span id="flyZone"><span class="pill"><span class="coin"></span> ANOM <span class="num" id="anomNum">0</span></span></span>
@@ -316,6 +319,7 @@
   <footer>
     <p class="safe serif-i"><span class="grad-text">Oly Oly All Come Free!</span></p>
     <a class="mail" href="mailto:anom@anomoriginals.lol">anom@anomoriginals.lol</a>
+    <p><a class="mail" href="https://anomarsty.lol/">← Back home — Shop & Mounts</a></p>
     <p class="footline">© AO UNIVERSE • LEARN KIND • GLOW BRIGHT</p>
   </footer>
 
